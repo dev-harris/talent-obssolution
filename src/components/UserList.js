@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FormControl, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { FormControl, ListGroup, Button } from 'react-bootstrap';
 import { useUsers } from '../hooks/useUsers';
 import UserDetailModal from './UserDetailModal';
 import styled from 'styled-components';
@@ -7,7 +7,7 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import UserForm from './UserForm';
 
 const UserList = () => {
-    const { users, searchTerm, setSearchTerm, editUser, deleteUser } = useUsers();
+    const { users, searchTerm, setSearchTerm, deleteUser } = useUsers();
     const [selectedUser, setSelectedUser] = useState(null);
     const [showUser, setShowUser] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
@@ -106,6 +106,12 @@ const StyledList = styled.div `
         .list-group-item {
             border-radius: 10px;
             height:68px;
+            transition: ease all .3s;
+            &:hover {
+                box-shadow: 0px 4px 10px -6px #000;
+                background-color: rgb(105 108 255 / 31%);
+                border-color: transparent;
+            }
         }
         @media (min-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
@@ -136,6 +142,8 @@ const StyledList = styled.div `
             font-size: 12px;
         }
     }
-
+    .username {
+        font-size: 2rem;
+    }
 `
 export default UserList;

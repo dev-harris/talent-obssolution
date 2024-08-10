@@ -1,6 +1,55 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import 'react-toastify/dist/ReactToastify.css';
+:root {
+    --color: #696cff;
+    --colorhover: #0004e0;
+    --coloractive: #006e58;
+}
 
 body {
     background-color: #f5f5f5;
 }
+.cursor-pointer {
+    cursor: pointer;
+}
+.closeIcon {
+    border: none;
+    position: absolute;
+    right: -15px;
+    font-size: 1.2rem;
+    top: -15px;
+    background: #696cff;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 1;
+    width: 35px;
+    height: 35px;
+}
+.button {
+    display: flex;
+    height: 40px;
+    padding: 0;
+    background: var(--color);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: .89rem;
+    font-weight: 500;
+    cursor: pointer}
+    .button:hover {
+        background: var(--colorhover)}
+    .button:active {
+        background: var(--coloractive)}
+    .button .button__text,
+    .button .button__icon {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 15px;
+        color: #fff;
+        height: 100%;
+    }
+    .button .button__icon {
+        font-size: 1.1rem;
+        background: rgba(0, 0, 0, 0.08);
+    }
